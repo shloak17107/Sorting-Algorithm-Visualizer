@@ -48,9 +48,15 @@ def shell_sort(nums):  # n^2
     # Shell Sort solves Insertion Sort's problem of many movements by
     # allowing the exchange of far items in an array.
 
-    # After each pass we halve the gap.
-    def updateGap(previousGap):
-        return previousGap//2
+    # After each pass we use the Knuth sequence to get the new gap.
+    def updateGap(currentGap):
+        if currentGap == 1:
+            return 0
+        newGap = 1
+        while 3 * newGap + 1 < currentGap:
+            newGap = 3 * newGap + 1
+        return newGap
+    
     # Get initial value of the gap
     gap = updateGap(nums.get_len())
     # The value of the gap is reduced until it reaches 1
