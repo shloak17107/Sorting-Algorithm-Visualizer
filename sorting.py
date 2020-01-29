@@ -44,6 +44,24 @@ class Array:
     def get_len(self):
         return len(self.values)
 
+def shell_sort(nums):  # n^2
+    print(nums)
+    def updateGap(previousGap):
+        return previousGap//2
+
+    gap = updateGap(nums.get_len())
+
+    while gap > 0:
+        for i in range(gap, nums.get_len(), gap):
+            j = i
+            while j > 0:
+                if nums.get(j) < nums.get(j - gap):
+                    nums.swap(j, j - gap)
+                    j = j - gap
+                else:
+                    break
+        gap = updateGap(gap)
+    print(nums)
 
 def bubble_sort(nums):  # n^2
     # We set swapped to True so the loop looks runs at least once
