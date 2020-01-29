@@ -33,6 +33,9 @@ class Array:
                                                                       index1] = Array.full_array[self.lower_index + index1], Array.full_array[self.lower_index + index2]
         self.plot()
 
+    def get(self, index):
+        return self.values[index]
+
     def set(self, index, num):
         self.values[index] = num
         Array.full_array[self.lower_index + index] = num
