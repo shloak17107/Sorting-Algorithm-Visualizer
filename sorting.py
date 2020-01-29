@@ -45,23 +45,30 @@ class Array:
         return len(self.values)
 
 def shell_sort(nums):  # n^2
-    print(nums)
+    # Shell Sort solves Insertion Sort's problem of many movements by
+    # allowing the exchange of far items in an array.
+
+    # After each pass we halve the gap.
     def updateGap(previousGap):
         return previousGap//2
-
+    # Get initial value of the gap
     gap = updateGap(nums.get_len())
-
+    # The value of the gap is reduced until it reaches 1
     while gap > 0:
-        for i in range(gap, nums.get_len(), gap):
+        # The array is gap-sorted i.e. every gap'th element subarray is sorted.
+        for i in range(gap, nums.get_len()):
             j = i
+            # We keep left-swapping the i-th element until we
+            # reach a smaller element.
             while j > 0:
                 if nums.get(j) < nums.get(j - gap):
                     nums.swap(j, j - gap)
                     j = j - gap
+                # reached a smaller element
                 else:
                     break
+        # Updating the gap after each pass.
         gap = updateGap(gap)
-    print(nums)
 
 def bubble_sort(nums):  # n^2
     # We set swapped to True so the loop looks runs at least once
