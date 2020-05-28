@@ -2,7 +2,7 @@
 
 Visualizing sorting algorithms, using the matplotlib library.
 
-Algorithms covered so far: 
+Algorithms covered: 
 
 | Name | Function Name |
 | - |:-: |
@@ -33,7 +33,7 @@ Pass function name as a command line argument from list of functions above
 
 # How to contribute
 
-**If you want to add a new sorting algorithm:**
+**How to add a new sorting algorithm:**
 
 1. Code the algorithm in ```sorting.py```.
 2. Name the function appropriately, like ```quick_sort```, ```bubble_sort```.
